@@ -9,7 +9,8 @@
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/solarized.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/highlight/monokai.min.css">
+  <!-- Fixed: Explicitly load Highlight.js theme with correct path -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/highlight/monokai.css">
   
   <style>
     .footer { 
@@ -135,10 +136,11 @@
         </aside>
       </section>
       
-      <!-- Code Sample Slide -->
+      <!-- Code Sample Slide - FIXED SYNTAX HIGHLIGHTING -->
       <section>
         <h2>Revenue Forecast Model</h2>
-        <pre><code data-trim data-line-numbers="|3|5|8|11|14">
+        <!-- FIXED: Added language-python class for proper syntax highlighting -->
+        <pre><code class="python" data-trim data-line-numbers="|3|5|8|11|14">
 import pandas as pd
 from sklearn.ensemble import RandomForestRegressor
 
@@ -263,6 +265,7 @@ print(f"Q4 Revenue: ${q4_projection[0]:.2f}B (95% CI: $1.25B-$1.35B)")
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/markdown/markdown.min.js"></script>
+  <!-- FIXED: Corrected Highlight.js initialization -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/highlight/highlight.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/math/math.min.js"></script>
   
@@ -276,13 +279,20 @@ print(f"Q4 Revenue: ${q4_projection[0]:.2f}B (95% CI: $1.25B-$1.35B)")
       });
     });
 
+    // FIXED: Proper initialization of Reveal with Highlight.js
     Reveal.initialize({
       hash: true,
       slideNumber: 'c/t',
       progress: true,
       plugins: [
         RevealMarkdown,
-        RevealHighlight,
+        // FIXED: Ensure Highlight plugin is properly configured
+        RevealHighlight.configure({
+          highlightOnLoad: true,
+          ignoreSpellcheck: true,
+          // Explicitly specify the theme (matches the CSS we loaded)
+          theme: 'monokai'
+        }),
         RevealMath.KaTeX
       ],
       math: {
