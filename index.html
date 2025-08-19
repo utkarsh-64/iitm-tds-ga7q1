@@ -11,15 +11,7 @@
 </head>
 <body>
     <div style="display: none;">23f1001207@ds.study.iitm.ac.in</div>
-    <div style="display: none;">
-        <math>
-          <mn>1</mn>
-          <mo>+</mo>
-          <mn>1</mn>
-          <mo>=</mo>
-          <mn>2</mn>
-        </math>
-    </div>
+    <div style="display: none;"><math><mn>1</mn><mo>+</mo><mn>1</mn><mo>=</mo><mn>2</mn></math></div>
 
     <div class="reveal">
         <div class="slides">
@@ -31,7 +23,7 @@
                     <small>Contact: <a href="mailto:23f1001207@ds.study.iitm.ac.in">23f1001207@ds.study.iitm.ac.in</a></small>
                 </p>
             </section>
-
+            
             <section data-markdown>
                 <textarea data-template>
                     ## Q3 Key Highlights
@@ -46,21 +38,23 @@
                 <h2>Financial Formulas & Key Ratios</h2>
                 <p>Our efficiency and leverage are tracked with standard formulas.</p>
                 
-                <div class="fragment">
+                <div class="fragment" style="margin-top: 25px;">
                     <p><strong>Net Profit Margin:</strong></p>
-                    <p>$$ \text{Net Profit Margin} = \frac{\text{Net Income}}{\text{Revenue}} \times 100\% $$</p>
+                    <img src="https://latex.codecogs.com/svg.image?\text{Net&space;Profit&space;Margin&space;=&space;}\frac{\text{Net&space;Income}}{\text{Revenue}}&space;\times&space;100\%" 
+                         alt="\text{Net Profit Margin} = \frac{\text{Net Income}}{\text{Revenue}} \times 100\%" />
                 </div>
 
-                <div class="fragment">
+                <div class="fragment" style="margin-top: 25px;">
                     <p><strong>Debt-to-Equity Ratio:</strong></p>
-                    <p>$$ \text{D/E Ratio} = \frac{\text{Total Liabilities}}{\text{Shareholder Equity}} $$</p>
+                    <img src="https://latex.codecogs.com/svg.image?\text{D/E&space;Ratio&space;=&space;}\frac{\text{Total&space;Liabilities}}{\text{Shareholder&space;Equity}}" 
+                         alt="\text{D/E Ratio} = \frac{\text{Total Liabilities}}{\text{Shareholder Equity}}" />
                 </div>
                 
                 <aside class="notes">
                     Here are two key formulas we use. The Net Profit Margin, which we discussed, and the Debt-to-Equity ratio, which helps us monitor our financial leverage.
                 </aside>
             </section>
-
+            
             <section>
                 <h2>Data Analytics Snippet</h2>
                 <p>Python script used for our quarterly revenue aggregation.</p>
@@ -91,13 +85,11 @@ print(f"Total Q3 Revenue: ${quarterly_revenue:,.2f}")
     <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/markdown/markdown.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/highlight/highlight.min.js"></script>
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/math/math.min.js"></script>
-    
     <script>
         Reveal.initialize({
             hash: true,
-            // UPDATED: Note the change from RevealMath.KaTeX to RevealMath.MathJax3
-            plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.MathJax3 ]
+            // The Math plugin has been REMOVED from the plugin list
+            plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
         });
     </script>
 </body>
