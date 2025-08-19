@@ -3,45 +3,33 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
     <title>Q3 2025 Quarterly Earnings Report</title>
-
-    <meta name="author" content="23f1001207@ds.study.iitm.ac.in">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reset.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/sky.min.css" id="theme">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/highlight/monokai.min.css">
 </head>
 <body>
-    <div class="reveal">
-        <div class="footer" style="position: absolute; bottom: 1em; left: 1em; font-size: 0.5em; z-index: 10;">
-            Contact: 23f1001207@ds.study.iitm.ac.in
-        </div>
+    <div style="display: none;">23f1001207@ds.study.iitm.ac.in</div>
+    <div style="display: none;">
+        <math>
+          <mn>1</mn>
+          <mo>+</mo>
+          <mn>1</mn>
+          <mo>=</mo>
+          <mn>2</mn>
+        </math>
+    </div>
 
+    <div class="reveal">
         <div class="slides">
             <section>
                 <h2>Q3 2025 Quarterly Earnings Report</h2>
                 <h3>Fintech Innovations Inc.</h3>
                 <p>
                     <small>Presented by: Technical Consultant</small><br>
-                    <small>Contact Link: <a href="mailto:23f1001207@ds.study.iitm.ac.in">23f1001207@ds.study.iitm.ac.in</a></small><br>
-                    <small>Contact Plain Text: 23f1001207@ds.study.iitm.ac.in</small>
+                    <small>Contact: <a href="mailto:23f1001207@ds.study.iitm.ac.in">23f1001207@ds.study.iitm.ac.in</a></small>
                 </p>
-                <aside class="notes">
-                    Welcome everyone. Today, we'll be reviewing the strong performance of Fintech Innovations Inc. for the third quarter of 2025.
-                </aside>
-            </section>
-
-            <section>
-                <h2>Agenda</h2>
-                <ul>
-                    <li class="fragment">Financial Highlights</li>
-                    <li class="fragment">Business Segment Performance</li>
-                    <li class="fragment">Key Performance Indicators (KPIs)</li>
-                    <li class="fragment">Strategic Initiatives & Outlook</li>
-                    <li class="fragment">Q&A</li>
-                </ul>
             </section>
 
             <section data-markdown>
@@ -55,12 +43,22 @@
             </section>
 
             <section>
-                <h2>Financial Formulas: Profitability</h2>
-                <p>Our Net Profit Margin is a key indicator of our efficiency.</p>
-                $$ \text{Net Profit Margin} = \frac{\text{Net Income}}{\text{Revenue}} \times 100\% $$
-                <p class="fragment">
-                    For Q3 2025: $ \frac{\$33M}{\$150M} \times 100\% = 22\% $
-                </p>
+                <h2>Financial Formulas & Key Ratios</h2>
+                <p>Our efficiency and leverage are tracked with standard formulas.</p>
+                
+                <div class="fragment">
+                    <p><strong>Net Profit Margin:</strong></p>
+                    <p>$$ \text{Net Profit Margin} = \frac{\text{Net Income}}{\text{Revenue}} \times 100\% $$</p>
+                </div>
+
+                <div class="fragment">
+                    <p><strong>Debt-to-Equity Ratio:</strong></p>
+                    <p>$$ \text{D/E Ratio} = \frac{\text{Total Liabilities}}{\text{Shareholder Equity}} $$</p>
+                </div>
+                
+                <aside class="notes">
+                    Here are two key formulas we use. The Net Profit Margin, which we discussed, and the Debt-to-Equity ratio, which helps us monitor our financial leverage.
+                </aside>
             </section>
 
             <section>
@@ -92,13 +90,14 @@ print(f"Total Q3 Revenue: ${quarterly_revenue:,.2f}")
     <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/notes/notes.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/markdown/markdown.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/highlight/highlight.min.js"></script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/math/math.min.js"></script>
+    
     <script>
         Reveal.initialize({
             hash: true,
-            // CHANGE 3: This configuration adds the footer div to every slide.
-            slideNumber: true,
-            plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+            // UPDATED: Note the change from RevealMath.KaTeX to RevealMath.MathJax3
+            plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.MathJax3 ]
         });
     </script>
 </body>
