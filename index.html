@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Q3 2025 Quarterly Earnings Report</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/sky.min.css" id="theme">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/highlight/monokai.min.css">
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h2>Q3 2025 Quarterly Earnings Report</h2>
+                <h3>Fintech Innovations Inc.</h3>
+                <p>
+                    <small>Presented by: Technical Consultant</small><br>
+                    <small>Contact: <a href="mailto:23f1001207@ds.study.iitm.ac.in">23f1001207@ds.study.iitm.ac.in</a></small>
+                </p>
+                <aside class="notes">
+                    Welcome everyone. Today, we'll be reviewing the strong performance of Fintech Innovations Inc. for the third quarter of 2025.
+                </aside>
+            </section>
+
+            <section>
+                <h2>Agenda</h2>
+                <ul>
+                    <li class="fragment">Financial Highlights</li>
+                    <li class="fragment">Business Segment Performance</li>
+                    <li class="fragment">Key Performance Indicators (KPIs)</li>
+                    <li class="fragment">Strategic Initiatives & Outlook</li>
+                    <li class="fragment">Q&A</li>
+                </ul>
+                <aside class="notes">
+                    Here's what we'll cover today. We'll start with the top-line financial numbers, dive into segment performance, look at our core KPIs, and then discuss our forward-looking strategy. We'll save time for questions at the end.
+                </aside>
+            </section>
+
+            <section data-markdown>
+                <textarea data-template>
+                    ## Q3 Key Highlights
+                    * **Record Revenue:** Achieved \$150M in quarterly revenue, up 15% YoY.
+                    * **User Growth:** Surpassed 5 million active users.
+                    * **Product Launch:** Successfully launched our new 'Global Pay' platform.
+                    * **Profitability:** Net Profit Margin increased to 22%.
+                </textarea>
+                <aside class="notes">
+                    This quarter was exceptional. We saw record-breaking revenue, significant user base expansion, and a successful major product launch, all while improving our profitability.
+                </aside>
+            </section>
+
+            <section>
+                <h2>Financial Formulas: Profitability</h2>
+                <p>Our Net Profit Margin is a key indicator of our efficiency.</p>
+                <p>The formula we use is:</p>
+                <p>
+                    $$ \text{Net Profit Margin} = \frac{\text{Net Income}}{\text{Revenue}} \times 100\% $$
+                </p>
+                <p class="fragment">
+                    For Q3 2025: $ \frac{\$33M}{\$150M} \times 100\% = 22\% $
+                </p>
+                <aside class="notes">
+                    To be precise, our net profit margin is calculated by dividing net income by revenue. This quarter, with \$33 million in net income against \$150 million in revenue, we achieved a healthy margin of 22%.
+                </aside>
+            </section>
+
+            <section>
+                <h2>Data Analytics Snippet</h2>
+                <p>Python script used for our quarterly revenue aggregation.</p>
+                <pre><code class="language-python" data-line-numbers="1-7|3-5|6">
+import pandas as pd
+
+# Load transactional data
+transactions = pd.read_csv('q3_transactions.csv')
+quarterly_revenue = transactions['amount'].sum()
+
+print(f"Total Q3 Revenue: ${quarterly_revenue:,.2f}")
+                </code></pre>
+                <aside class="notes">
+                    To demonstrate our data-driven approach, here is a simple Python script our analytics team uses. It leverages the pandas library to quickly aggregate revenue from our transaction logs. First, we import the library. Then, we load the data and sum the transaction amounts. Finally, we print the formatted result. This efficiency is crucial for real-time decision making.
+                </aside>
+            </section>
+
+            <section>
+                <h2>Thank You</h2>
+                <h3>Q&A</h3>
+                <p>
+                    For follow-up questions, please reach out:<br>
+                    <a href="mailto:23f1001207@ds.study.iitm.ac.in">23f1001207@ds.study.iitm.ac.in</a>
+                </p>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/notes/notes.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/markdown/markdown.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/highlight/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/math/math.min.js"></script>
+    <script>
+        // More info about initialization & config:
+        // - https://revealjs.com/initialization/
+        // - https://revealjs.com/config/
+        Reveal.initialize({
+            hash: true,
+            // Learn about plugins: https://revealjs.com/plugins/
+            plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+        });
+    </script>
+</body>
+</html>
