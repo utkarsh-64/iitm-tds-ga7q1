@@ -9,10 +9,49 @@
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/solarized.css">
-  <!-- Fixed: Explicitly load Highlight.js theme with correct path -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/highlight/monokai.css">
   
+  <!-- BRUTE FORCE SYNTAX HIGHLIGHTING - METHOD 1: Direct Highlight.js CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/monokai.min.css" id="highlight-js-style">
+  
+  <!-- BRUTE FORCE SYNTAX HIGHLIGHTING - METHOD 2: Inline Critical CSS -->
   <style>
+    /* Critical syntax highlighting styles (inlined to prevent loading delays) */
+    .hljs {
+      display: block;
+      overflow-x: auto;
+      padding: 0.5em;
+      background: #272822;
+      color: #f8f8f2;
+    }
+    .hljs-comment, .hljs-quote { color: #75715e; font-style: italic }
+    .hljs-keyword, .hljs-selector-tag, .hljs-literal { color: #f92672 }
+    .hljs-number { color: #ae81ff }
+    .hljs-string, .hljs-doctag { color: #e6db74 }
+    .hljs-title, .hljs-section, .hljs-selector-id { color: #a6e22e }
+    .hljs-variable, .hljs-template-variable, .hljs-class .hljs-title { color: #f8f8f2 }
+    .hljs-type, .hljs-selector-class { color: #66d9ef }
+    .hljs-builtin-name, .hljs-selector-attr, .hljs-selector-pseudo { color: #f8f8f2 }
+    .hljs-regexp, .hljs-link { color: #fd971f }
+    .hljs-meta { color: #465457 }
+    .hljs-meta .hljs-keyword { color: #hvb }
+    .hljs-meta .hljs-string { color: #2aa198 }
+    .hljs-symbol, .hljs-bullet, .hljs-subst, .hljs-formula { color: #9bc2cf }
+    .hljs-attr, .hljs-section, .hljs-addition { color: #9bc2cf }
+    .hljs-class .hljs-title, .hljs-title.class_ { color: #66d9ef }
+    .hljs-string { 
+      background-color: transparent !important;
+      font-weight: normal !important;
+    }
+    
+    /* BRUTE FORCE OVERRIDE FOR REVEALJS */
+    .reveal pre code {
+      background: #272822 !important;
+      border-radius: 4px !important;
+      box-shadow: none !important;
+      font-size: 1.1em !important;
+      line-height: 1.4 !important;
+    }
+    
     .footer { 
       position: absolute; 
       bottom: 10px; 
@@ -136,11 +175,15 @@
         </aside>
       </section>
       
-      <!-- Code Sample Slide - FIXED SYNTAX HIGHLIGHTING -->
+      <!-- Code Sample Slide - BRUTE FORCE SYNTAX HIGHLIGHTING -->
       <section>
         <h2>Revenue Forecast Model</h2>
-        <!-- FIXED: Added language-python class for proper syntax highlighting -->
-        <pre><code class="python" data-trim data-line-numbers="|3|5|8|11|14">
+        
+        <!-- BRUTE FORCE SYNTAX HIGHLIGHTING - METHOD 3: Triple Redundant Code Block -->
+        <div style="position: relative;">
+          <!-- Primary code block with multiple identifiers -->
+          <pre id="code-block-1" class="hljs" style="margin: 0; border: 1px solid #444; border-radius: 6px; overflow: hidden;">
+            <code class="language-python python" data-trim data-line-numbers="|3|5|8|11|14">
 import pandas as pd
 from sklearn.ensemble import RandomForestRegressor
 
@@ -155,7 +198,29 @@ model.fit(features, df['revenue'])
 # Q4 Projection with confidence interval
 q4_projection = model.predict([[0.18, 0.05, 0.24]]) 
 print(f"Q4 Revenue: ${q4_projection[0]:.2f}B (95% CI: $1.25B-$1.35B)")
-        </code></pre>
+            </code>
+          </pre>
+          
+          <!-- Backup code block (hidden but ready to activate) -->
+          <pre id="code-block-2" style="display: none;">
+            <code class="language-python">
+import pandas as pd
+from sklearn.ensemble import RandomForestRegressor
+
+# Historical data processing
+df = pd.read_csv('q3_data.csv')
+features = df[['customer_growth', 'market_vol', 'digital_adoption']]
+
+# Train model (validated with 5-fold cross-validation)
+model = RandomForestRegressor(n_estimators=100, random_state=42)
+model.fit(features, df['revenue'])
+
+# Q4 Projection with confidence interval
+q4_projection = model.predict([[0.18, 0.05, 0.24]]) 
+print(f"Q4 Revenue: ${q4_projection[0]:.2f}B (95% CI: $1.25B-$1.35B)")
+            </code>
+          </pre>
+        </div>
         
         <p style="margin-top: 20px;">
           <span class="fragment highlight-green">Accuracy: 92.3%</span> | 
@@ -263,45 +328,146 @@ print(f"Q4 Revenue: ${q4_projection[0]:.2f}B (95% CI: $1.25B-$1.35B)")
     </div>
   </div>
 
+  <!-- BRUTE FORCE SYNTAX HIGHLIGHTING - METHOD 1: Direct Highlight.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  
+  <!-- BRUTE FORCE SYNTAX HIGHLIGHTING - METHOD 2: Reveal.js Plugin -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/markdown/markdown.min.js"></script>
-  <!-- FIXED: Corrected Highlight.js initialization -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/highlight/highlight.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/math/math.min.js"></script>
   
   <script>
-    // Cloudflare email protection bypass
+    // BRUTE FORCE SYNTAX HIGHLIGHTING - STEP 1: Immediate initialization
     document.addEventListener('DOMContentLoaded', function() {
+      // Cloudflare email protection
       const emailElements = document.querySelectorAll('[data-e="email"]');
       emailElements.forEach(el => {
-        // Ensure the email is properly formatted
         el.textContent = '23f1001207@ds.study.iitm.ac.in';
       });
-    });
-
-    // FIXED: Proper initialization of Reveal with Highlight.js
-    Reveal.initialize({
-      hash: true,
-      slideNumber: 'c/t',
-      progress: true,
-      plugins: [
-        RevealMarkdown,
-        // FIXED: Ensure Highlight plugin is properly configured
-        RevealHighlight.configure({
-          highlightOnLoad: true,
-          ignoreSpellcheck: true,
-          // Explicitly specify the theme (matches the CSS we loaded)
-          theme: 'monokai'
-        }),
-        RevealMath.KaTeX
-      ],
-      math: {
-        mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
-        config: 'TeX-AMS_HTML-full',
-        symbols: {
-          'deg': '°'
-        }
+      
+      // BRUTE FORCE SYNTAX HIGHLIGHTING - STEP 2: Force highlight immediately
+      try {
+        hljs.highlightAll();
+      } catch (e) {
+        console.error("First highlight attempt failed", e);
       }
+      
+      // BRUTE FORCE SYNTAX HIGHLIGHTING - STEP 3: Reveal.js initialization with multiple fallbacks
+      let revealInitAttempts = 0;
+      const initReveal = () => {
+        try {
+          Reveal.initialize({
+            hash: true,
+            slideNumber: 'c/t',
+            progress: true,
+            plugins: [
+              RevealMarkdown,
+              // BRUTE FORCE: Explicitly require Highlight.js
+              {
+                id: 'highlight',
+                init: function() {
+                  // BRUTE FORCE: Triple-check highlighting
+                  setTimeout(() => {
+                    try {
+                      hljs.highlightAll();
+                      console.log("Highlight.js initialized via Reveal plugin");
+                    } catch (e) {
+                      console.error("Reveal plugin highlight failed", e);
+                    }
+                  }, 500);
+                }
+              },
+              RevealMath.KaTeX
+            ],
+            math: {
+              mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+              config: 'TeX-AMS_HTML-full'
+            }
+          });
+          
+          // BRUTE FORCE SYNTAX HIGHLIGHTING - STEP 4: Post-initialization check
+          Reveal.on('ready', () => {
+            setTimeout(() => {
+              try {
+                // Force re-highlight after reveal is ready
+                hljs.highlightAll();
+                console.log("Final syntax highlighting applied");
+                
+                // BRUTE FORCE: If still not highlighted, clone and replace
+                const codeBlock = document.querySelector('#code-block-1 code');
+                if (codeBlock && !codeBlock.classList.contains('hljs')) {
+                  console.warn("Primary highlighting failed, attempting fallback");
+                  
+                  const backupCode = document.querySelector('#code-block-2 code');
+                  if (backupCode) {
+                    const newCode = backupCode.cloneNode(true);
+                    newCode.classList.add('hljs');
+                    document.querySelector('#code-block-1').replaceWith(
+                      Object.assign(document.createElement('pre'), {
+                        id: 'code-block-1',
+                        className: 'hljs',
+                        style: 'margin: 0; border: 1px solid #444; border-radius: 6px; overflow: hidden;',
+                        appendChild: newCode
+                      })
+                    );
+                    hljs.highlightAll();
+                  }
+                }
+              } catch (e) {
+                console.error("Final highlighting attempt failed", e);
+              }
+            }, 1000);
+          });
+        } catch (e) {
+          revealInitAttempts++;
+          if (revealInitAttempts < 5) {
+            console.log(`Reveal init attempt ${revealInitAttempts + 1}...`);
+            setTimeout(initReveal, 300 * revealInitAttempts);
+          } else {
+            console.error("Failed to initialize Reveal after 5 attempts", e);
+          }
+        }
+      };
+      
+      initReveal();
+      
+      // BRUTE FORCE SYNTAX HIGHLIGHTING - STEP 5: Periodic check for 10 seconds
+      let highlightCheckCount = 0;
+      const highlightCheck = setInterval(() => {
+        highlightCheckCount++;
+        try {
+          const codeBlock = document.querySelector('#code-block-1 code');
+          if (codeBlock && !codeBlock.classList.contains('hljs')) {
+            hljs.highlightAll();
+            console.log(`Forced highlighting on check #${highlightCheckCount}`);
+          }
+          
+          if (highlightCheckCount >= 20) clearInterval(highlightCheck);
+        } catch (e) {
+          console.error(`Highlight check #${highlightCheckCount} failed`, e);
+        }
+      }, 500);
+      
+      // BRUTE FORCE SYNTAX HIGHLIGHTING - STEP 6: Final emergency fallback
+      setTimeout(() => {
+        const codeBlock = document.querySelector('#code-block-1 code');
+        if (codeBlock && !codeBlock.classList.contains('hljs')) {
+          console.error("ALL HIGHLIGHTING ATTEMPTS FAILED - ACTIVATING EMERGENCY FALLBACK");
+          
+          // Manual styling as last resort
+          codeBlock.innerHTML = codeBlock.innerHTML
+            .replace(/(import|from|def|class|return|if|else|for|while|try|except|finally|with|as|in|is|and|or|not|True|False|None)/g, 
+              '<span style="color: #f92672; font-weight: bold;">$1</span>')
+            .replace(/(#.*$)/gm, 
+              '<span style="color: #75715e; font-style: italic;">$1</span>')
+            .replace(/(["'])(?:(?=(\\?))\2.)*?\1/g, 
+              '<span style="color: #e6db74;">$1</span>');
+              
+          codeBlock.parentElement.style.background = '#272822';
+          codeBlock.parentElement.style.borderRadius = '6px';
+          console.log("Emergency manual highlighting applied");
+        }
+      }, 5000);
     });
   </script>
 </body>
