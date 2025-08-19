@@ -1,96 +1,261 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Q3 2025 Quarterly Earnings Report</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reset.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/sky.min.css" id="theme">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/highlight/monokai.min.css">
+  <meta charset="utf-8">
+  <title>Q3 2023 Earnings Report</title>
+  <meta name="description" content="Q3 Earnings Presentation for Stakeholders">
+  <meta name="author" content="Technical Consultant">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/solarized.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/highlight/monokai.min.css">
+  
+  <style>
+    .footer { 
+      position: absolute; 
+      bottom: 10px; 
+      width: 100%; 
+      text-align: center; 
+      font-size: 0.8em;
+      color: #aaa;
+    }
+    .reveal .state-background {
+      background: linear-gradient(to right, #0c2461, #1e3799);
+    }
+    .reveal h1, .reveal h2, .reveal h3 {
+      text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    .math-equation {
+      background: rgba(255,255,255,0.1);
+      padding: 15px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+  </style>
 </head>
 <body>
-    <div style="display: none;">23f1001207@ds.study.iitm.ac.in</div>
-    <div style="display: none;"><math><mn>1</mn><mo>+</mo><mn>1</mn><mo>=</mo><mn>2</mn></math></div>
-
-    <div class="reveal">
-        <div class="slides">
-            <section>
-                <h2>Q3 2025 Quarterly Earnings Report</h2>
-                <h3>Fintech Innovations Inc.</h3>
-                <p>
-                    <small>Presented by: Technical Consultant</small><br>
-                    <small>Contact: <a href="mailto:23f1001207@ds.study.iitm.ac.in">23f1001207@ds.study.iitm.ac.in</a></small>
-                </p>
-            </section>
-            
-            <section data-markdown>
-                <textarea data-template>
-                    ## Q3 Key Highlights
-                    * **Record Revenue:** Achieved \$150M in quarterly revenue, up 15% YoY.
-                    * **User Growth:** Surpassed 5 million active users.
-                    * **Product Launch:** Successfully launched our new 'Global Pay' platform.
-                    * **Profitability:** Net Profit Margin increased to 22%.
-                </textarea>
-            </section>
-
-            <section>
-                <h2>Financial Formulas & Key Ratios</h2>
-                <p>Our efficiency and leverage are tracked with standard formulas.</p>
-                
-                <div class="fragment" style="margin-top: 25px;">
-                    <p><strong>Net Profit Margin:</strong></p>
-                    <img src="https://latex.codecogs.com/svg.image?\text{Net&space;Profit&space;Margin&space;=&space;}\frac{\text{Net&space;Income}}{\text{Revenue}}&space;\times&space;100\%" 
-                         alt="\text{Net Profit Margin} = \frac{\text{Net Income}}{\text{Revenue}} \times 100\%" />
-                </div>
-
-                <div class="fragment" style="margin-top: 25px;">
-                    <p><strong>Debt-to-Equity Ratio:</strong></p>
-                    <img src="https://latex.codecogs.com/svg.image?\text{D/E&space;Ratio&space;=&space;}\frac{\text{Total&space;Liabilities}}{\text{Shareholder&space;Equity}}" 
-                         alt="\text{D/E Ratio} = \frac{\text{Total Liabilities}}{\text{Shareholder Equity}}" />
-                </div>
-                
-                <aside class="notes">
-                    Here are two key formulas we use. The Net Profit Margin, which we discussed, and the Debt-to-Equity ratio, which helps us monitor our financial leverage.
-                </aside>
-            </section>
-            
-            <section>
-                <h2>Data Analytics Snippet</h2>
-                <p>Python script used for our quarterly revenue aggregation.</p>
-                <pre><code class="language-python" data-line-numbers="1-7|3-5|6">
-import pandas as pd
-
-# Load transactional data
-transactions = pd.read_csv('q3_transactions.csv')
-quarterly_revenue = transactions['amount'].sum()
-
-print(f"Total Q3 Revenue: ${quarterly_revenue:,.2f}")
-                </code></pre>
-            </section>
-
-            <section>
-                <h2>Thank You</h2>
-                <h3>Q&A</h3>
-                <p>
-                    For follow-up questions, please reach out:<br>
-                    <a href="mailto:23f1001207@ds.study.iitm.ac.in">23f1001207@ds.study.iitm.ac.in</a>
-                </p>
-            </section>
+  <div class="reveal">
+    <div class="slides">
+      
+      <!-- Title Slide -->
+      <section>
+        <h1>Q3 2023 Earnings Report</h1>
+        <h3>Driving Growth Through Digital Transformation</h3>
+        <p style="margin-top: 50px;">
+          <img src="https://i.imgur.com/5v3Jk0p.png" width="200" alt="Financial Institution Logo">
+        </p>
+        <p class="footer">23f1001207@ds.study.iitm.ac.in | Confidential - For Stakeholder Review Only</p>
+        <aside class="notes">
+          <strong>Opening Remarks:</strong>
+          <ul>
+            <li>Welcome stakeholders and thank them for attending</li>
+            <li>Highlight this is our strongest Q3 performance in 5 years</li>
+            <li>Emphasize digital initiatives as key growth drivers</li>
+            <li>Transition: "Let's dive into the performance highlights"</li>
+            <li>⏱️ Timing: 2 minutes max for intro</li>
+          </ul>
+        </aside>
+      </section>
+      
+      <!-- Markdown Slide -->
+      <section data-markdown>
+        <textarea data-template>
+          ## Q3 Performance Highlights
+          - **Revenue**: $1.2B (▲12% YoY) 
+          - **Net Profit**: $420M (▲8% YoY)
+          - **EPS**: $3.25 (vs $2.98 prior year)
+          
+          ### Key Growth Drivers
+          ![](https://i.imgur.com/7GkQ0eL.png)
+          *Digital banking adoption surged 24%*
+          
+          > "Our retail segment outperformed despite market volatility, 
+          > driven by record mobile app engagement"
+          > — CFO, Q3 Earnings Call
+          
+          **Q4 Focus**: AI-driven personalization rollout
+        </textarea>
+        <aside class="notes">
+          <strong>Key Points:</strong>
+          <ul>
+            <li>Revenue growth significantly outpaces industry average (5.2%)</li>
+            <li>Profit margin maintained at 35% despite inflationary pressures</li>
+            <li>Digital adoption is our #1 strategic priority</li>
+            <li>Prepare stakeholders for deeper dive into digital metrics next</li>
+            <li>⚠️ Avoid discussing specific competitors by name</li>
+          </ul>
+        </aside>
+      </section>
+      
+      <!-- Fragment Animation Slide -->
+      <section>
+        <h2>Risk Exposure Analysis</h2>
+        <div class="math-equation">
+          \(\text{Risk Score} = \frac{\text{Exposure}}{\text{Capital Buffer}} \times 100\)
         </div>
-    </div>
+        
+        <ul style="margin-top: 40px;">
+          <li class="fragment" data-fragment-index="1">Credit Risk: ▼1.2% MoM</li>
+          <li class="fragment" data-fragment-index="2">Market Risk: ▲0.7% MoM</li>
+          <li class="fragment" data-fragment-index="3">Operational Risk: Stable</li>
+        </ul>
+        
+        <p class="fragment" data-fragment-index="4" style="margin-top: 30px; background: #27ae60; color: white; padding: 15px; border-radius: 8px;">
+          <strong>Action Plan:</strong> Allocate $50M to AI-driven fraud detection (Q4)
+        </p>
+        
+        <aside class="notes">
+          <strong>Delivery Guidance:</strong>
+          <ul>
+            <li>Pause after each fragment appears for emphasis</li>
+            <li>Explain credit risk improvement: "Tighter underwriting standards"</li>
+            <li>Market risk increase: "Temporary volatility in emerging markets"</li>
+            <li>Highlight action plan as proactive measure</li>
+            <li>Use laser pointer on risk score formula</li>
+          </ul>
+          <strong>Stakeholder Concern:</strong> Address potential questions about market risk increase
+        </aside>
+      </section>
+      
+      <!-- Code Sample Slide -->
+      <section>
+        <h2>Revenue Forecast Model</h2>
+        <pre><code data-trim data-line-numbers="|3|5|8|11|14">
+import pandas as pd
+from sklearn.ensemble import RandomForestRegressor
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/notes/notes.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/markdown/markdown.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/highlight/highlight.min.js"></script>
-    
-    <script>
-        Reveal.initialize({
-            hash: true,
-            // The Math plugin has been REMOVED from the plugin list
-            plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-        });
-    </script>
+# Historical data processing
+df = pd.read_csv('q3_data.csv')
+features = df[['customer_growth', 'market_vol', 'digital_adoption']]
+
+# Train model (validated with 5-fold cross-validation)
+model = RandomForestRegressor(n_estimators=100, random_state=42)
+model.fit(features, df['revenue'])
+
+# Q4 Projection with confidence interval
+q4_projection = model.predict([[0.18, 0.05, 0.24]]) 
+print(f"Q4 Revenue: ${q4_projection[0]:.2f}B (95% CI: $1.25B-$1.35B)")
+        </code></pre>
+        
+        <p style="margin-top: 20px;">
+          <span class="fragment highlight-green">Accuracy: 92.3%</span> | 
+          <span class="fragment highlight-blue">Training Data: 5 years</span>
+        </p>
+        
+        <aside class="notes">
+          <strong>Technical Explanation:</strong>
+          <ul>
+            <li>Line 3: Critical feature selection - digital adoption is strongest predictor</li>
+            <li>Line 5: 18% customer growth projection based on current trends</li>
+            <li>Line 8: Model validated with strict cross-validation</li>
+            <li>Line 11: Confidence interval shows model reliability</li>
+            <li>Line 14: Final projection with business-friendly formatting</li>
+          </ul>
+          <strong>For Technical Stakeholders:</strong> 
+          "The random forest model outperformed ARIMA by 15% in backtesting"
+        </aside>
+      </section>
+      
+      <!-- Math Equations Slide -->
+      <section>
+        <h2>Financial Performance Metrics</h2>
+        
+        <div class="math-equation">
+          <p><strong>Return on Equity (ROE):</strong></p>
+          \(\text{ROE} = \frac{\text{Net Income}}{\text{Shareholders' Equity}} \times 100\%\)
+        </div>
+        
+        <div class="fragment math-equation" data-fragment-index="1">
+          <p><strong>Q3 Calculation:</strong></p>
+          \(\text{ROE} = \frac{\$420\text{M}}{\$5.2\text{B}} \times 100\% = \textbf{8.08\%}\)
+        </div>
+        
+        <div class="math-equation" style="margin-top: 40px;">
+          <p><strong>Capital Adequacy Ratio (CAR):</strong></p>
+          \(\text{CAR} = \frac{\text{Tier 1 Capital} + \text{Tier 2 Capital}}{\text{Risk-Weighted Assets}} \times 100\%\)
+        </div>
+        
+        <div class="fragment" data-fragment-index="2">
+          <p style="margin-top: 20px; background: #e67e22; color: white; padding: 12px; border-radius: 6px;">
+            Current CAR: 14.7% (Regulatory Minimum: 10.5%)
+          </p>
+        </div>
+        
+        <aside class="notes">
+          <strong>Key Messages:</strong>
+          <ul>
+            <li>ROE improved from 7.6% in Q2 - explain drivers: cost optimization + revenue growth</li>
+            <li>Emphasize CAR is well above regulatory requirements</li>
+            <li>Connect metrics to strategic priorities: "This capital position enables our AI investment"</li>
+            <li>Anticipate question about dividend policy - prepare response</li>
+          </ul>
+          <strong>Visual Aid:</strong> Use pointer to trace equation components
+        </aside>
+      </section>
+      
+      <!-- Closing Slide -->
+      <section>
+        <h1>Q4 Outlook & Actions</h1>
+        <ul style="font-size: 1.2em;">
+          <li class="fragment">Launch AI personalization suite (Oct)</li>
+          <li class="fragment">Expand into 3 new markets</li>
+          <li class="fragment">Target: 15% revenue growth YoY</li>
+        </ul>
+        
+        <p style="margin-top: 60px; font-size: 1.3em;">
+          <strong>Thank You</strong><br>
+          Questions?
+        </p>
+        
+        <p class="footer" style="margin-top: 50px;">
+          23f1001207@ds.study.iitm.ac.in | Q3 2023 Earnings Report
+        </p>
+        
+        <aside class="notes">
+          <strong>Closing Remarks:</strong>
+          <ul>
+            <li>Reiterate confidence in Q4 targets</li>
+            <li>Highlight AI launch as game-changer</li>
+            <li>Market expansion strategy: "Focused on high-growth regions"</li>
+            <li>Prepare for Q&A - have backup slides ready</li>
+            <li>Final message: "We're positioned for sustained growth"</li>
+          </ul>
+          <strong>Q&A Preparation:</strong>
+          <ul>
+            <li>Have detailed digital metrics ready</li>
+            <li>Prepare risk mitigation scenarios</li>
+            <li>Know exact dates for market expansions</li>
+          </ul>
+        </aside>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/markdown/markdown.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/highlight/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/math/math.min.js"></script>
+  
+  <script>
+    Reveal.initialize({
+      hash: true,
+      slideNumber: 'c/t',
+      progress: true,
+      plugins: [
+        RevealMarkdown,
+        RevealHighlight,
+        RevealMath.KaTeX
+      ],
+      math: {
+        mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+        config: 'TeX-AMS_HTML-full',
+        symbols: {
+          'deg': '°'
+        }
+      }
+    });
+  </script>
 </body>
 </html>
